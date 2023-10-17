@@ -1,6 +1,8 @@
 from math import ceil
 aboli = float(input("Cik kg ābolu? [>=0]: "))
 ir_ievarijuma = (input("Tiks izmantots ievārījuma vai parastais cukurs? [i/p]: ") == "i") # Ja atbild i, tad pārveido uz bool
+if input("Vai jums ir labi ar sirdi? [j/n]: ") != 'j':
+    exit()
 perkamie_produkti = []
 
 # Receptes proporcijas: 1 kg āboli : 300 g cukurs : 160 ml ūdens : 1/3 citrons : 1.6 ml mandeļu ekstrakts : 3.3 g kanēlis
@@ -14,13 +16,13 @@ cenas = {
     "kanēlis": 0.24 # 3.3 g
 }
 
+produkti = {}
+
 # Pieejamo produktu pārbaude
 print('\t- Pieejamie produkti -')
 for produkts in ['cukurs','citrons', 'ūdens','mandeļu ekstrakts', 'kanēlis']: # Priekš katras sastāvdaļas pērkamo sarakstā, paprasa vai šis atrodas mājās
-    if (input(f'Vai mājās ir pieejams {produkts}? [j/n]: ') == 'n'): # Ja atbild n, tad pievieno produktu pērkamo sarakstam
-        perkamie_produkti.append(produkts)
-    else:
-        continue
+    produkti[produkts] = input(f'Cik daudz mājās ir {produkts}? [daudz./0]: ')  
+
 
 # un parāda, tos ko jāpērk
 if perkamie_produkti != []:
