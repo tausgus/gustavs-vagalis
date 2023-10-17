@@ -1,4 +1,4 @@
-preces = {}
+preces = {} # Vārdnīcātiks ievietotas preces un to cenas, lai būtu tām viegli piekļūt kopēji.
 pabeigts = False
 
 while not pabeigts:
@@ -24,7 +24,7 @@ print('\t --- Čeks ---')
 for item in preces:
     print(f'{item}: {preces[item]}€') # Priekš katras preces vārdnīcā, izprintē tās nosaukumu un kopējo cenu
     kopsumma += preces[item] # Tad to pieskaita kopsummai
-print(f'\t= {kopsumma}€')
+print(f'\t| = {kopsumma}€ |')
 
 print('\t --- Iespējamās cenas ar atlaidi: ---')
 ir_karte = (input("Vai jums ir klienta karte? [j/n]: ") == 'j') # Inputu pārveido uz True, ja atbild j
