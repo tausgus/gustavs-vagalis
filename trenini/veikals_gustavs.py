@@ -1,4 +1,4 @@
-preces = {} # Vārdnīcātiks ievietotas preces un to cenas, lai būtu tām viegli piekļūt kopēji.
+preces = {} # Vārdnīcā tiks ievietotas preces un to cenas, lai būtu tām viegli piekļūt kopēji.
 pabeigts = False
 
 while not pabeigts:
