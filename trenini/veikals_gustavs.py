@@ -38,4 +38,10 @@ else:
 if len(preces) >= 3:
     print(f'30%: {round(kopsumma - 0.3*kopsumma)}€') # Ja vairāk vai tieši trīs preces, 30% atlaide
 
-print(f'Katra otrā par brīvu: {round(kopsumma/2)}€') # Katra otrā par brīvu -> puse no cenas
+# Kopsummai pieskaita tikai katras otrās preces cenu, ko var iegūt pārbaudot vai indekss ir pāra skaitlis
+otra_par_brivu = 0
+for prece in preces:
+    if list(preces).index(prece) % 2 == 0:
+        otra_par_brivu += preces[prece]
+
+print(f'Katra otrā par brīvu: {round(otra_par_brivu)}€')
