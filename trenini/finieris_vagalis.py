@@ -46,4 +46,4 @@ print(f'* Stūra savienojumi: {materialuUzskaite("sturis", skaits)} gab.')
 
 print(f'\t- Izmaksas -')
 print(f'* Cena par vienu vienību: {round(materialuAprekins(1, dimensijas),2)}€')
-print(f'* Kopsumma par {skaits} vienībam: {round(materialuAprekins(skaits, dimensijas),2)}€')
+print(f'* Kopsumma par {skaits} vienībam: | {round(materialuAprekins(skaits, dimensijas),2)}€ |')
