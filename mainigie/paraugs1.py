@@ -4,6 +4,8 @@
 3. Konkatenācija
 '''
 
+
+
 name = 'Anna'
 teksts = 'teksts'
 skaitlis = 9
