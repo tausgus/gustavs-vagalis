@@ -9,6 +9,9 @@ skaits = int(input('Ievadiet podestu skaitu [>=1]: '))
 # Ievieto katru dimensiju sarakstā
 dimensijas = [float(input('Ievadiet podesta garumu [>0 mm]: ')), float(input('Ievadiet podesta platumu [>0 mm]: ')), float(input('Ievadiet podesta augstumu [>0 mm]: '))] 
 biezums = int(input('Ievadiet plāksnes biezumu [12-21 mm]: '))
+if biezums < 12 or biezums > 21:
+    print('\t! Plāksnes biezums var būt tikai 12-21 mm')
+    quit()
 
 def materialuUzskaite(tips, skaits, dimensijas=[]):
     match tips:
@@ -16,11 +19,8 @@ def materialuUzskaite(tips, skaits, dimensijas=[]):
             # S = 2(ab+ah+bh) * n, paralēlskaldņa laukums
             return 2 * (dimensijas[0]*dimensijas[1] + dimensijas[0]*dimensijas[2] + dimensijas[1]*dimensijas[2]) * skaits
         case "liste":
-            # Ja vairāki, tad 12 līstes starp katru pāri
-            if skaits == 1:
-                return 0
-            else:
-                return skaits * 12 - 12
+            # 12 līstes starp katru pāri, tātad n = n. * 12 - 12
+            return skaits * 12 - 12
         case "sturis":
             # Katram 8 stūra savienojumi
             return 8 * skaits
