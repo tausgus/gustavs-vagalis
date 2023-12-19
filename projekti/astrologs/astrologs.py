@@ -27,7 +27,7 @@ for faila_nosaukums in ["apgalvojumi", "teicieni" , "rikojumi"]: # Automātiski 
         globals()[faila_nosaukums].append(apgalvojums.strip("\n")) # Ar globals pārveido str uz mainīgā nosaukumu no for loop saraksta
     fails.close()
 
-izvele = input("Ievadiet horoskopa nosaukumu vai 0, lai izdrukātu pilnu prognožu lapu: [nosaukums/0]: ")
+izvele = input("Ievadiet horoskopa nosaukumu, vai 0, lai izdrukātu pilnu prognožu lapu: [nosaukums/0]: ")
 if izvele == "0":
     for horoskops in horoskopi:
         prognoze(horoskops, teicieni, apgalvojumi, rikojumi) # Atkārto prognozes funkciju katram horoskopam
