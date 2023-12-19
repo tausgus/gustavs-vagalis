@@ -22,7 +22,7 @@ def prognoze(horoskopa_nosaukums, teicienu_saraksts, apgalvojumu_saraksts, rikoj
 
 # Sarakstu piepildīšana
 for faila_nosaukums in ["apgalvojumi", "teicieni" , "rikojumi"]: # Automātiski iziet cauri visiem 3 failiem
-    fails = open(f'svg/gustavs-vagalis/projekti/astrologs/{faila_nosaukums}.txt', 'r') # Atver tikai lasīšanas režīmā
+    fails = open(f'{faila_nosaukums}.txt', 'r', encoding='utf-8') # Atver tikai lasīšanas režīmā
     for apgalvojums in fails: # Katra līnija - apgalvojums, to pievieno sarakstam, noņemot lieko newline kodu
         globals()[faila_nosaukums].append(apgalvojums.strip("\n")) # Ar globals pārveido str uz mainīgā nosaukumu no for loop saraksta
     fails.close()
